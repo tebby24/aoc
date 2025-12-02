@@ -12,7 +12,9 @@
             "options": {
                 "cwd": "${fileDirname}"
             },
-            "problemMatcher": ["$gcc"],
+            "problemMatcher": [
+                "$gcc"
+            ],
             "presentation": {
                 "reveal": "always",
                 "echo": false,
