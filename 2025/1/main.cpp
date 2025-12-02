@@ -4,13 +4,12 @@
 
 int part_1(std::ifstream& fin) {
 	int pos = 50;
-	int rotation = 0;
 	int zero_count = 0;
 	std::string line = "";
 
 	while(std::getline(fin, line)) {
 		std::string dir = line.substr(0, 1);
-		rotation = std::stoi(line.substr(1));
+		int rotation = std::stoi(line.substr(1));
 		dir == "R" ? pos += rotation : pos -= rotation;
 		if (pos % 100 == 0) {
 			zero_count++;
@@ -21,15 +20,13 @@ int part_1(std::ifstream& fin) {
 
 int part_2(std::ifstream& fin) {
 	int pos = 50;
-	int rotation = 0;
 	int zero_count = 0;
 	std::string line = "";
 
 	while(std::getline(fin, line)) {
 		int rotation = std::stoi(line.substr(1));
 		std::string dir = line.substr(0, 1);
-		if (rotation >= 100) {
-			// add all the passes I'm guaranteed from rotations of 100 or more
+		if (rotation >= 100) { // add all the passes I'm guaranteed from rotations of 100 or more
 			zero_count += rotation / 100;
 			rotation %= 100;
 		}
@@ -54,12 +51,10 @@ int part_2(std::ifstream& fin) {
 					pos += 100;
 				}
 			}
-
 		}
 	}
 	return zero_count;
 }
-
 
 int main(int argc, char* argv[]) {
 	std::ifstream fin_1("input.txt");
