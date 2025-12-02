@@ -7,13 +7,16 @@
             "command": "bash",
             "args": [
                 "-c",
-                "g++ -g '${file}' && a.out"
+                "g++ -g '${file}' && ./a.out"
             ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
             "problemMatcher": ["$gcc"],
             "presentation": {
                 "reveal": "always",
                 "echo": false,
-                "focus": false,
+                "focus": true,
                 "panel": "dedicated",
                 "showReuseMessage": false,
                 "clear": true
